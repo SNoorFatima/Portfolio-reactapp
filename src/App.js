@@ -7,35 +7,43 @@ import Qualification from './components/Qualification';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom';
 
 function App() {
   const [mystyle, setMystyle] = useState({
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    color: 'black'
   });
 
   const toggleStyle = () => {
-    if (mystyle.backgroundColor == 'white') {
-      setMystyle({
-        color: 'white',
-        backgroundColor: 'black'
-      });
-    } else {
-      setMystyle({
-        backgroundColor: 'white',
-        color:'black'
-      });
-    }
+    setMystyle(prevStyle => ({
+      backgroundColor: prevStyle.backgroundColor === 'white' ? 'black' : 'white',
+      color: prevStyle.color === 'black' ? 'white' : 'black'
+    }));
   };
+
   return (
-    <div className="App" style={mystyle}>
-     <Header toggleStyle={toggleStyle} />
-      <Hero/>
-      <About/>
-      <Qualification/>
-      <Portfolio/>
-      <Contact/>
-      <Footer/>
-    </div>
+    <Router>
+      <div className="App" style={mystyle}>
+        <Header toggleStyle={toggleStyle} />
+        <Routes>
+          <Route path="/" element={<>
+            <Hero />
+            <About />
+            <Qualification />
+            <Portfolio />
+            <Contact />
+          </>} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
