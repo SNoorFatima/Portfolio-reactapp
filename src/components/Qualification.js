@@ -36,7 +36,7 @@ const Qualification = () => {
           </div>
           <div class="qualification-item" data-aos="fade-up" data-aos-duration="1000">
             <h4>June 10, 2024-July 10,2024</h4>
-            <h5>FPinnacle Full stack</h5>
+            <h5>Pinnacle Full stack</h5>
             <p>Intern</p>
             <p>Remote <br/>Develop strong foundations for database</p>
           </div>

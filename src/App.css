@@ -62,7 +62,17 @@ nav ul li a {
   border-radius: 2rem;
   font-family: "Lato", sans-serif;
 }
-
+.Change-mode{
+  width: 8.125rem;
+  height: 2.5rem;
+  background: #7963e0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 2rem;
+  font-family: "Lato", sans-serif;
+}
 /* HERO SECTION */
 
 .hero-section {
@@ -487,6 +497,18 @@ form {
   border-radius: 15px;
   font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+}
+.Edit-button{
+  margin-top: 2rem;
+  width: 8.125rem;
+  height: 2.5rem;
+  background: #7963e0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 2rem;
+  font-family: "Lato", sans-serif;
 }
 
 .contact-button {
