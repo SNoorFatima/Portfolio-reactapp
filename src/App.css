@@ -1,3 +1,4 @@
+/* General Styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,6 @@
 }
 
 body {
-
   line-height: 1.6;
 }
 
@@ -20,7 +20,6 @@ body {
   background: #fafafa;
   padding: 1rem 0;
   font-family: 'Montserrat', sans-serif;
-  margin-top: 0;
   position: fixed;
   width: 100%;
   z-index: 2;
@@ -37,16 +36,16 @@ body {
   font-weight: bold;
 }
 
-nav ul {
+.nav-menu ul {
   display: flex;
   list-style: none;
 }
 
-nav ul li {
+.nav-menu ul li {
   margin-left: 1.5rem;
 }
 
-nav ul li a {
+.nav-menu ul li a {
   text-decoration: none;
   color: #333;
 }
@@ -62,7 +61,8 @@ nav ul li a {
   border-radius: 2rem;
   font-family: "Lato", sans-serif;
 }
-.Change-mode{
+
+.change-mode {
   width: 8.125rem;
   height: 2.5rem;
   background: #7963e0;
@@ -73,6 +73,56 @@ nav ul li a {
   border-radius: 2rem;
   font-family: "Lato", sans-serif;
 }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-menu ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #fafafa;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active ul {
+    display: flex;
+  }
+
+  .nav-menu ul li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .quote-button,
+  .change-mode {
+    display: none;
+  }
+}
+@media (max-width:860px) {
+
+  .quote-button,
+  .change-mode {
+  width: 6.125rem;
+  height: 1.5rem;
+  font-size: 12px;;
+  }
+}
+
 /* HERO SECTION */
 
 .hero-section {
@@ -160,7 +210,49 @@ nav ul li a {
   padding-right: 0.9rem;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 768px) {
+  .hero-section .container {
+    flex-direction: column; /* Stack elements vertically */
+  }
 
+  .hero-text {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text span {
+    font-size: 16px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text h2 {
+    font-size: 1rem;
+  }
+
+  .hero-text p {
+    font-size: 12px;
+  }
+
+  .hire-me-button {
+    width: 7rem;
+    height: 2rem;
+  }
+
+  .hero-image img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
 /* About Section */
 .about-section {
   background: #f9f9f9;
@@ -237,6 +329,15 @@ nav ul li a {
 
 .about-details strong {
   font-weight: 700;
+}
+@media (max-width=860px) {
+  .about-container {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;
+  }
+  
 }
 
 /* Achievements Section */
